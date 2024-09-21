@@ -1,7 +1,5 @@
 .cast-skeleton-container {
   position: absolute;
-  /* top: 0;
-  left: 0; */
   width: 200px;
   min-height: 300px;
   overflow: hidden;
@@ -14,7 +12,6 @@
   width: 100%;
   height: 250px;
   border-radius: 10px;
-  /* background-color: brown; */
   position: relative;
 }
 
@@ -36,7 +33,6 @@
   border-radius: 10px;
   width: 100%;
   height: 10px;
-  /* background-color: brown; */
 }
 
 .text-sketelon:nth-child(2) {

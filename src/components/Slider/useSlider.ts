@@ -2,8 +2,6 @@ import { useEffect, useState } from "react"
 import { SliderProps } from "../../intefraces/Inrefaces"
 
 export function useSlider({ images,  autoplay = false } : SliderProps ) {
-  // console.log(autoplay, 'autoplay')
-  // console.log(images, 'images')
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [selectedImage, setSelectedImage] = useState(images[0])
   const [loaded, setLoaded] = useState(false)
