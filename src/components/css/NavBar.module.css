@@ -1,0 +1,29 @@
+
+.nav-bar-page {
+  width: 100%;
+  height: 5rem;
+  padding: 0 6.25rem;
+  /* background-color: rgba(5, 4, 13, 0.5); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+}
+
+.user-icon {
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.menu-icon {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-bar-page {
+    padding: 0 1.5rem;
+    height: 4rem;
+  }
+}

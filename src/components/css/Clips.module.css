@@ -1,0 +1,6 @@
+.header-clips {
+  display: flex;
+  padding-bottom: 24px;
+  justify-content: space-between;
+  align-items: end;
+}

@@ -1,0 +1,58 @@
+.container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0 -6.25rem;
+  scrollbar-width: none;
+}
+
+.container-trend {
+  margin: 0 -6.25rem 0 0;
+}
+
+.li-movie {
+  flex-shrink: 0;
+  max-width: 15.625rem;
+  scroll-snap-align: start;
+}
+
+.li-movie:first-child {
+  padding-left: 6.25rem;
+  box-sizing: content-box;
+}
+
+.li-trend:first-child {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.li-movie:last-child {
+  padding-right: 6.25rem;
+  box-sizing: content-box;
+}
+
+.movie-poster {
+  max-width: 15.625rem;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 0 -1.5rem;
+  }
+
+  .container-trend {
+    margin: 0 -1.5rem 0 0;
+  }
+
+  .li-movie:first-child {
+    padding-left: 1.5rem;
+  }
+  
+  .li-movie:last-child {
+    padding-right: 1.5rem;
+  }
+}

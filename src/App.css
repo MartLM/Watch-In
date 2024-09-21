@@ -1,0 +1,96 @@
+/* .article {
+  margin: 0 100px ;
+  padding-bottom: 64px;
+}
+
+
+.header-genres {
+  display: flex;
+  padding-bottom: 24px;
+  justify-content: space-between;
+  align-items: end;
+} */
+
+.container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  display: flex;
+  gap: 24px;
+  margin: 0 -100px;
+  scrollbar-width: none;
+}
+
+.li-image {
+  position: relative;
+  flex-shrink: 0;
+  max-width: 200px;
+  scroll-snap-align: end;
+}
+
+.image-poster {
+  width: 200px;
+  height: 250px;
+  object-fit : cover;
+  border-radius: 15px;
+}
+
+/* HTML: <div class="loader"></div> */
+
+
+/* .container-ul {
+  overflow-x: visible;
+  margin: 0 -100px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+} */
+/* 
+.container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  display: flex;
+  gap: 24px;
+  margin: 0 -100px; */
+  /* padding: 0 100px; */
+  /* overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; */
+  /* scrollbar-width: none;
+} */
+
+/* .li-movie {
+  flex-shrink: 0;
+  max-width: 250px;
+  scroll-snap-align: start;
+}
+
+.li-movie:first-child {
+  padding-left: 100px;
+  box-sizing: content-box;
+}
+
+.li-movie:last-child {
+  padding-right: 100px;
+  box-sizing: content-box;
+}
+*/
+ 
+
+
+
+/* 
+
+.container-ul::-webkit-scrollbar {
+  height: 8px;
+}
+
+.container-ul::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.container-ul::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+} */

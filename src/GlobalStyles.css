@@ -1,0 +1,66 @@
+
+.secondary-color {
+  color: var(--secondary);
+}
+
+.title1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* ---------------  */
+.title-1 span {
+  color: var(--secondary);
+  font-weight: 900;
+}
+/* ---------------  */
+.title-2 {
+  font-family: 'Bebas Neue';
+  font-size: 4rem;
+  line-height: 0.8;
+}
+
+.title-2-media {
+  font: 2.5rem 'Bebas Neue';
+  line-height: 0.8;
+}
+
+.title-2-s {
+  font: 700 1.5rem 'Montserrat';
+  display: block;
+  color: var(--secondary);
+}
+
+.title-2-xl {
+  font: 7.5rem 'Bebas Neue';
+  line-height: 0.8;
+}
+
+.title-3 {
+  font: 600 1.125rem 'Montserrat';
+}
+
+.title-4,
+.button {
+  font: 700 1rem 'Montserrat';
+}
+
+.title-5 {
+  font: italic 400 1rem 'Montserrat Italic';
+}
+
+.overview{
+  font: 500 1.125rem 'Open Sans';
+  line-height: 1.45;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 4;
+  box-orient: vertical;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.caption {
+  font: 600 0.875rem 'Montserrat';
+}

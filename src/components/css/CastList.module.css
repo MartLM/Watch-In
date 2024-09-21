@@ -1,0 +1,25 @@
+.li-cast {
+  position: relative;
+  flex-shrink: 0;
+  width: 200px;
+  min-height: 350px;
+  scroll-snap-align: start;
+}
+
+.li-cast:first-child {
+  padding-left: 100px;
+  box-sizing: content-box;
+}
+
+.li-cast:last-child {
+  padding-right: 100px;
+  box-sizing: content-box;
+}
+
+.member-image {
+  width: 200px;
+  height: 250px;
+  object-fit : cover;
+  border-radius: 10px;
+}
+
