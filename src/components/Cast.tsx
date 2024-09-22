@@ -36,7 +36,7 @@ export default function Cast({ id }: CastProps) {
   }, [id])
 
   return (
-    <MediaContainer normalTitle={'Top'} styledTitle={'Cast'}  loaded={loaded}>
+    <MediaContainer title={'Top casts'} loaded={loaded} variant={'media'}>
       <CastList cast={cast} />
     </MediaContainer>
   )

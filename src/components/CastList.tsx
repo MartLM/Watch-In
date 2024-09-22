@@ -45,7 +45,7 @@ export default function CastList({ cast }: CastListProps) {
         <Link to={`https://image.tmdb.org/t/p/original${castMember.profile_path}`} target="_blank">
           <img
             className={`element-selector ${styles['member-image']}`}
-            src={` ${castMember.profile_path ? `https://image.tmdb.org/t/p/w200${castMember.profile_path}` : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'}`}
+            src={`${castMember.profile_path ? `https://image.tmdb.org/t/p/w200${castMember.profile_path}` : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'}`}
             onLoad={() => handleImageLoad(castMember.id)}
             style={{ opacity: loadedImages[castMember.id] ? 1 : 0, transition: 'opacity 2s' }}
           />

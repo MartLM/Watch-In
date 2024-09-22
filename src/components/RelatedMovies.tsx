@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { getRelatedMovies } from "../services/movies"
 import { Movie } from "../intefraces/Inrefaces"
-import MoviesSection from "./MoviesSectionSlider"
+import MediaContainer from "./MediaContainer"
+import { MoviesList } from "./MoviesList"
 
 
 export default function RelatedMovies({ movie_id }: {movie_id: string}) {
@@ -12,9 +13,8 @@ export default function RelatedMovies({ movie_id }: {movie_id: string}) {
   }, [movie_id])
 
   return (
-    <MoviesSection
-      title='Related movies'
-      movies={movies}
-    />
+    <MediaContainer title={'Related movies'} loaded={true} variant="movies">
+      <MoviesList movies={movies}/>
+  </MediaContainer>
   )
 }

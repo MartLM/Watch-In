@@ -1,46 +1,28 @@
 import { useEffect, useState } from "react"
 import { getImages } from "../services/movies"
 import { DataImages } from "../intefraces/Inrefaces"
-import { useSliderMoviesList } from "../hooks/useSliderMoviesList"
-import ButtonsGroup from "./ButtonsGroup"
-
-import styles from './css/Clips.module.css'
 import ImagesList from "./ImagesList"
+import MediaContainer from "./MediaContainer"
 
 interface ClipsProps {
   id: string
-  normalTitle: string
-  styledTitle: string
 }
 
-export default function ClipsList({ id, normalTitle, styledTitle }: ClipsProps) {
+export default function ClipsList({ id }: ClipsProps) {
 
-  const [images, setImages] = useState<DataImages[] | null>(null)
-  const [loading, setLoading] = useState(true)
-  const { elementRef, scrollLeft, scrollRight } = useSliderMoviesList()
+  const [images, setImages] = useState<DataImages[]>([])
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    setLoading(true)
+    setLoaded(false)
     getImages(id)
       .then(res => setImages(res.backdrops))
-      .finally(() => setLoading(false))
+      .finally(() => setLoaded(true))
   }, [id])
 
   return (
-    <article>
-      <header className={styles['header-clips']}>
-        <section>
-          <h2 className='title-2'>{normalTitle} <span className="secondary-color">{styledTitle}</span></h2>
-        </section>
-        <ButtonsGroup right={scrollRight} left={scrollLeft}/>
-      </header>
-      <section aria-label='list of clips'>
-        {
-          loading
-            ? <p>Loading...</p>
-            : images && <ImagesList data={images} elementRef={elementRef}/>
-        }
-      </section>
-    </article>
+    <MediaContainer title={'Selected clips'} loaded={loaded} variant={'media'}>
+      <ImagesList data={images}/>
+    </MediaContainer>
   )
 }

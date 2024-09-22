@@ -1,18 +1,18 @@
-import { Movie, ImagesProps } from "../intefraces/Inrefaces"
+import { ImagesProps } from "../intefraces/Inrefaces"
 
 const API_KEY = import.meta.env.VITE_API_KEY
 const URL_IMGS = 'https://image.tmdb.org/t/p/original'
 const URL_IMGS_W500 = 'https://image.tmdb.org/t/p/w500'
 
-function appendUrlToImages(movies: Movie[], url: string | null = null) {
-  return movies.map(movie => {
-    return {
-      ...movie,
-      poster_path: URL_IMGS_W500 + movie.poster_path,
-      backdrop_path: (url ? url : URL_IMGS_W500) + movie.backdrop_path
-    }
-  })
-}
+// function appendUrlToImages(movies: Movie[], url: string | null = null) {
+//   return movies.map(movie => {
+//     return {
+//       ...movie,
+//       poster_path: URL_IMGS_W500 + movie.poster_path,
+//       backdrop_path: (url ? url : URL_IMGS_W500) + movie.backdrop_path
+//     }
+//   })
+// }
 
 function appendUrlToDataImages({ backdrops, logos, posters, id } : ImagesProps ) {
   
@@ -37,9 +37,6 @@ export function getMoviesByGenre(id_genre: string) {
   return fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${id_genre}&certification_country=MX&certification.lte=A`)
     .then(data => data.json())
     .then(res => res.results)
-    .then(results => {
-      return appendUrlToImages(results)
-    })
 }
 
 export async function getGenres() {
@@ -52,7 +49,6 @@ export function getSliderMovies() {
   return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
     .then(data => data.json())
     .then(res => res.results)
-    // .then(results => appendUrlToImages(results, URL_IMGS))
 }
 
 export function getImagesArray(movie_id: number[]) {
@@ -81,7 +77,7 @@ export function getMovieDetails(id: string) {
 export function getRelatedMovies(movie_id: string) {
   return fetch(`https://api.themoviedb.org/3/movie/${movie_id}/recommendations?api_key=${API_KEY}&language=en`)
   .then(data => data.json())
-  .then(res => appendUrlToImages(res.results))
+  .then(res => res.results)
 }
 
 export function getCredits(movie_id: string) {

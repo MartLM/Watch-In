@@ -82,7 +82,7 @@ export default function PageMovieDetails() {
             <NavBar />
             <article className="content-header">
               <section className="backdrop-container">
-                <img className="backdrop-image" src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title} />
+                <img className="backdrop-image" src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.title} />
               </section>
               <section className="details-movie">
                 <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
@@ -110,7 +110,7 @@ export default function PageMovieDetails() {
             {
               id && (
                 <>
-                  <Clips id={id} normalTitle='Selected' styledTitle='Clips' />
+                  <Clips id={id}/>
                   <Cast id={id}/>
                   <RelatedMovies movie_id={id}/>
                 </>

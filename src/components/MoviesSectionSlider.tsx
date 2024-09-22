@@ -25,7 +25,7 @@ export default function MoviesSectionSlider({ isTrend = false, title, movies }: 
         <ButtonsGroup right={scrollRight} left={scrollLeft}/>
       </header>
       <section aria-label={isTrend ? `list of ${title} genre movies`: `list of ${title}`}>
-        <MoviesList movies={movies} isTrend={isTrend} elementRef={elementRef}/>
+        {/* <MoviesList movies={movies} isTrend={isTrend} elementRef={elementRef}/> */}
       </section>
     </article>
   )
