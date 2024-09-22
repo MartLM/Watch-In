@@ -13,12 +13,6 @@ import Cast from "./Cast";
 interface MovieDetailsProps {
   adult: boolean,
   backdrop_path: string,
-  // belongs_to_collection: {
-  //   id: 14890,
-  //   name: "Bad Boys Collection",
-  //   poster_path: "/iB59poJBofg1ciKlu6LzZakf11m.jpg",
-  //   backdrop_path: "/k9hhSHg5GS4UgWQC6MHBOZrarji.jpg"
-  // },
   budget: number,
   genres: [
     {

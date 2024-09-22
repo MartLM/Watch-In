@@ -26,7 +26,6 @@ export default function MediaContainer({ variant, children, loaded, title }: Med
     <article className={isTrend ? styles['article-trend'] : ''}>
       <header className={styles[isTrend ? 'header-trend' : 'header-media']}>
         <section>
-          {/* <h2 className='title-2-media'>{normalTitle} <span className="secondary-color">{styledTitle}</span></h2> */}
           <MediaContainerHeaders variant={variant} title={title}/>
         </section>
         <ButtonsGroup right={scrollRight} left={scrollLeft}/>

@@ -4,16 +4,6 @@ const API_KEY = import.meta.env.VITE_API_KEY
 const URL_IMGS = 'https://image.tmdb.org/t/p/original'
 const URL_IMGS_W500 = 'https://image.tmdb.org/t/p/w500'
 
-// function appendUrlToImages(movies: Movie[], url: string | null = null) {
-//   return movies.map(movie => {
-//     return {
-//       ...movie,
-//       poster_path: URL_IMGS_W500 + movie.poster_path,
-//       backdrop_path: (url ? url : URL_IMGS_W500) + movie.backdrop_path
-//     }
-//   })
-// }
-
 function appendUrlToDataImages({ backdrops, logos, posters, id } : ImagesProps ) {
   
   return {
