@@ -16,7 +16,7 @@
   flex-shrink: 0;
   max-width: 15.625rem;
   scroll-snap-align: start;
-  padding-left: 16px;
+  padding-left: 1rem;
   box-sizing: content-box;
 }
 

@@ -23,7 +23,7 @@
   scroll-behavior: smooth;
   display: flex;
   gap: 4px;
-  margin: 0 -100px;
+  margin: 0 -6.25rem;
   scrollbar-width: none;
 }
 
@@ -41,3 +41,20 @@
   gap: 1.5rem;
 }
 
+@media screen and (max-width: 768px) {
+  .ul-container {
+    margin: 0 -1.5rem;
+  }
+
+  .container-trend {
+    margin: 0 -1.5rem 0 0;
+  }
+
+  .li-movie:first-child {
+    padding-left: 1.5rem;
+  }
+  
+  .li-movie:last-child {
+    padding-right: 1.5rem;
+  }
+}
