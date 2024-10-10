@@ -11,6 +11,11 @@
   z-index: 10;
 }
 
+.bold {
+  color: var(--secondary);
+  font-weight: 900;
+}
+
 .user-icon {
   width: 1.875rem;
   height: 1.875rem;

@@ -4,11 +4,12 @@ import { getMovieDetails } from "../services/movies";
 import { Link } from "react-router-dom";
 import PlayIcon from "../Icons/PlayIcon";
 
-import './MovieDetails.css'
 import RelatedMovies from "./RelatedMovies";
 import { NavBar } from "./NavBar";
 import Clips from "./Clips";
 import Cast from "./Cast";
+
+import styles from './css/MovieDetails.module.css'
 
 interface MovieDetailsProps {
   adult: boolean,
@@ -74,33 +75,43 @@ export default function PageMovieDetails() {
         <>
           <header>
             <NavBar />
-            <article className="content-header">
-              <section className="backdrop-container">
-                <img className="backdrop-image" src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.title} />
+            <article className={styles["content-header"]}>
+              <section className={styles["backdrop-container"]}>
+                <img 
+                  className={styles["backdrop-image"]}
+                  src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} 
+                  alt={movie.title}
+                />
               </section>
-              <section className="details-movie">
-                <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
-                <section className='metadata'>
-                  {
-                    movie.genres?.map(genre => (
-                      <span key={genre.name + movie.id} className='caption'>
-                          {
-                            genre.name
-                          }
-                      </span>
-                    ))
-                  }
-                </section>
-                <h1>{}</h1>
-                <p className="overview">{movie.title}: {movie.overview}</p>
-                <section className='buttons-container'>
-                  <Link className='button-slider-cta watch' to={`/movie/${id}`}><PlayIcon />Watch-In</Link>
+              <section className={styles["slider-content"]}>
+                <section className={styles["details-movie"]}>
+                  <img 
+                    src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                  <section className='metadata'>
+                    {
+                      movie.genres?.map(genre => (
+                        <span 
+                          key={genre.name + movie.id} 
+                          className='caption'
+                        >
+                          { genre.name }
+                        </span>
+                      ))
+                    }
+                  </section>
+                  <p className="overview">{movie.title}: {movie.overview}</p>
+                  <section className='buttons-container'>
+                    <Link className='button-slider-cta watch' to={`/movie/${id}`}>
+                      <PlayIcon/>Watch-In
+                    </Link>
+                  </section>
                 </section>
               </section>
             </article>
           </header>
           <main>
-            <article>Cast</article>
             {
               id && (
                 <>

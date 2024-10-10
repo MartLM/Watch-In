@@ -36,8 +36,10 @@ export default function Cast({ id }: CastProps) {
   }, [id])
 
   return (
-    <MediaContainer title={'Top casts'} loaded={loaded} variant={'media'}>
-      <CastList cast={cast} />
-    </MediaContainer>
+    cast && cast.length > 0 && (
+      <MediaContainer title={'Top casts'} loaded={loaded} variant={'media'}>
+        <CastList cast={cast} />
+      </MediaContainer>
+    )
   )
 }

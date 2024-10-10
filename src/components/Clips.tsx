@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 import { getImages } from "../services/movies"
 import { DataImages } from "../intefraces/Inrefaces"
-import ImagesList from "./ImagesList"
+import ImagesList from "./ClipsList.tsx"
 import MediaContainer from "./MediaContainer"
 
 interface ClipsProps {
   id: string
 }
 
-export default function ClipsList({ id }: ClipsProps) {
+export default function Clips({ id }: ClipsProps) {
 
   const [images, setImages] = useState<DataImages[]>([])
   const [loaded, setLoaded] = useState(false)
@@ -21,8 +21,10 @@ export default function ClipsList({ id }: ClipsProps) {
   }, [id])
 
   return (
-    <MediaContainer title={'Selected clips'} loaded={loaded} variant={'media'}>
-      <ImagesList data={images}/>
-    </MediaContainer>
+    images && images.length > 0 && (
+      <MediaContainer title={'Selected clips'} loaded={loaded} variant={'media'}>
+        <ImagesList data={images}/>
+      </MediaContainer>
+    )
   )
 }

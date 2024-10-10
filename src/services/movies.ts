@@ -55,7 +55,7 @@ export function getImagesArray(movie_id: number[]) {
 export function getImages( movie_id: string | number) {
   return fetch(`https://api.themoviedb.org/3/movie/${movie_id}/images?api_key=${API_KEY}&include_image_language=null`)
     .then(data => data.json())
-    .then(res => appendUrlToDataImages(res))
+    .then(res => res)
 }
 
 export function getMovieDetails(id: string) {

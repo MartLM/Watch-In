@@ -8,12 +8,6 @@
   font-weight: 600;
 }
 
-/* ---------------  */
-.title-1 span {
-  color: var(--secondary);
-  font-weight: 900;
-}
-/* ---------------  */
 .title-2 {
   font-family: 'Bebas Neue';
   font-size: 4rem;
@@ -63,4 +57,10 @@
 
 .caption {
   font: 600 0.875rem 'Montserrat';
+}
+
+@media (max-width: 768px) {
+  .title-3 {
+    font-size: 1.4rem;
+  }
 }

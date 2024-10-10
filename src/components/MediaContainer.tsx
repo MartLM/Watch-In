@@ -30,10 +30,10 @@ export default function MediaContainer({ variant, children, loaded, title }: Med
         </section>
         <ButtonsGroup right={scrollRight} left={scrollLeft}/>
       </header>
-      <section className={!loaded ? styles.loading : ''} aria-label='list of clips'>
+      <section aria-label='list of clips'>
         {
           loaded &&
-          <ul className={styles['ul-container']} ref={elementRef}>
+          <ul className={`${styles['ul-container']} ${isTrend ? styles['ul-container-trend']: ''}`} ref={elementRef}>
             {children}
           </ul>
         }

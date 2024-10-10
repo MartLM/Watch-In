@@ -1,18 +1,8 @@
-.container {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  display: flex;
-  gap: 4px;
-  margin: 0 -100px;
-  scrollbar-width: none;
-}
-
 .li-image {
   flex-shrink: 0;
-  padding-left: 20px;
+  padding-left: 0.75rem;
   box-sizing: content-box;
-  max-height: 250px;
+  max-height: 15.625rem;
   aspect-ratio: 16/9;
   scroll-snap-align: start;
 }

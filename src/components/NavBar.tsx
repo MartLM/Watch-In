@@ -9,7 +9,7 @@ export function NavBar() {
     <nav className={styles['nav-bar-page']}>
       <button className='menu'><MenuIcon className={styles['menu-icon']}/></button>
       <Link to='/'>
-        <h1 className='title-1'>Watch<span>In</span></h1>
+        <h1 className='title-1'>Watch<span className={styles.bold}>In</span></h1>
       </Link>
       <ul className='list'>
         <UserIcon className={ styles['user-icon'] }/>

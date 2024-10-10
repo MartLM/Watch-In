@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { SliderProps } from "../../intefraces/Inrefaces"
+import { SliderProps } from "../intefraces/Inrefaces"
 
 export function useSlider({ images,  autoplay = false } : SliderProps ) {
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -47,6 +47,7 @@ export function useSlider({ images,  autoplay = false } : SliderProps ) {
   const nextImage = () => {
     selectNewImage(selectedIndex, images)
   }
+
 
   return ({
     previousImage,

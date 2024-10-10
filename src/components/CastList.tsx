@@ -33,24 +33,31 @@ export default function CastList({ cast }: CastListProps) {
   },[cast])
 
   const handleImageLoad = (id: number) => {
-    setLoadedImages(prevState => ({ ...prevState, [id]: true }));
+    setLoadedImages((prevState) => ({ ...prevState, [id]: true }));
   };
 
   return (
-    cast && cast.map(castMember => (
-      <li key={castMember.profile_path} className={styles['li-cast']} >
+    cast && cast.map(({id, name, character, profile_path}) => (
+      <li key={profile_path} className={styles['li-cast']} >
           {
-            !loadedImages[castMember.id] && <CastLoader />
+            !loadedImages[id] && <CastLoader />
           }
-        <Link to={`https://image.tmdb.org/t/p/original${castMember.profile_path}`} target="_blank">
-          <img
-            className={`element-selector ${styles['member-image']}`}
-            src={`${castMember.profile_path ? `https://image.tmdb.org/t/p/w200${castMember.profile_path}` : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'}`}
-            onLoad={() => handleImageLoad(castMember.id)}
-            style={{ opacity: loadedImages[castMember.id] ? 1 : 0, transition: 'opacity 2s' }}
-          />
-          <h3 className='title-cast' style={{ display: loadedImages[castMember.id] ? 'block' : 'none' }}>{castMember.name}</h3>
-          <h4 className='title-4' style={{ display: loadedImages[castMember.id] ? 'block' : 'none' }}>{castMember.character}</h4>
+        <Link to={`https://image.tmdb.org/t/p/original${profile_path}`} target="_blank">
+          <picture>
+            <source srcSet={`https://image.tmdb.org/t/p/w154${profile_path}`} media="(max-width: 768px)" />
+            <img
+              loading="lazy"
+              className={`element-selector ${styles['member-image']}`}
+              src={`https://image.tmdb.org/t/p/w200${profile_path}`}
+              onError={(e)=>{e.currentTarget.src='/Unknown.webp'}}
+              onLoad={() => handleImageLoad(id)}
+              style={{ opacity: loadedImages[id] ? 1 : 0, transition: 'opacity 2s' }}
+            />            
+          </picture>
+          <div className={styles.div}>
+            <h3 className='title-4' style={{ display: loadedImages[id] ? 'block' : 'none' }}>{name}</h3>
+            <h4 className='title-5' style={{ display: loadedImages[id] ? 'block' : 'none' }}>{character}</h4>
+          </div>
         </Link>
       </li>
     ))

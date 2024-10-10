@@ -5,7 +5,7 @@
   align-items: end;
 }
 
-.loading {
+/* .loading {
   width: 100%;
   min-height: 350px;
   border-radius: 10px;
@@ -15,16 +15,22 @@
 
 @keyframes loading {
   to {background-color: rgba(255, 255, 255, 0.08);}
-}
+} */
 
 .ul-container {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
   margin: 0 -6.25rem;
-  scrollbar-width: none;
+}
+
+.ul-container::-webkit-scrollbar {
+  display: none;
+}
+
+.ul-container-trend {
+  margin: 0 -6.25rem 0 0;
 }
 
 .article-trend {
@@ -44,6 +50,11 @@
 @media screen and (max-width: 768px) {
   .ul-container {
     margin: 0 -1.5rem;
+    gap: 0.2rem;
+  }
+
+  .ul-container-trend {
+    margin: 0 -1.5rem 0 0;
   }
 
   .container-trend {

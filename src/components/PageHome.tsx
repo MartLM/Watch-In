@@ -1,6 +1,6 @@
 import { MoviesByGenre } from "./MoviesByGenre";
 import { NavBar } from "./NavBar";
-import SliderHeader from "./Slider/SliderHeader";
+import SliderHeader from "./SliderHeader";
 import { TrendMovies } from "./TrendMovies";
 
 
