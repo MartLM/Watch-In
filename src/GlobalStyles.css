@@ -3,40 +3,40 @@
   color: var(--secondary);
 }
 
-.title1 {
-  font-size: 1.5rem;
+.title-1 {
+  font-size: 1rem;
   font-weight: 600;
 }
 
 .title-2 {
   font-family: 'Bebas Neue';
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 0.8;
 }
 
 .title-2-media {
-  font: 2.5rem 'Bebas Neue';
+  font: 2rem 'Bebas Neue';
   line-height: 0.8;
 }
 
 .title-2-s {
-  font: 700 1.5rem 'Montserrat';
+  font: 700 1rem 'Montserrat';
   display: block;
   color: var(--secondary);
 }
 
 .title-2-xl {
-  font: 7.5rem 'Bebas Neue';
+  font: 3rem 'Bebas Neue';
   line-height: 0.8;
 }
 
 .title-3 {
-  font: 600 1.125rem 'Montserrat';
+  font: 600 .875rem 'Montserrat';
 }
 
 .title-4,
 .button {
-  font: 700 1rem 'Montserrat';
+  font: 700 .875rem 'Montserrat';
 }
 
 .title-5 {
@@ -44,7 +44,7 @@
 }
 
 .overview{
-  font: 500 1.125rem 'Open Sans';
+  font: 400 .875rem 'DM Sans';
   line-height: 1.45;
   overflow: hidden;
   display: -webkit-box;
@@ -55,12 +55,55 @@
   text-overflow: ellipsis;
 }
 
-.caption {
-  font: 600 0.875rem 'Montserrat';
+.overview b{
+  font: 700 1rem 'DM Sans';
 }
 
-@media (max-width: 768px) {
-  .title-3 {
-    font-size: 1.4rem;
+.caption {
+  font: 600 0.75rem 'Montserrat';
+}
+
+
+
+@media (min-width: 768px) {
+
+  .title-1 {
+    font-size: 1.5rem;
   }
+  
+  .title-2 {
+    font-size: 4rem;
+  }
+
+  .title-2-s {
+    font-size: 1.5rem;
+  }
+
+  .title-2-media {
+    font-size: 3rem;
+  }
+
+  .title-3 {
+    font-size: 1.125rem;
+  }
+
+  .overview{
+    font-size: 1.125rem;
+  }
+
+  .overview b{
+    font-size: 1.250rem;
+  }
+
+  .title-4,
+  .button {
+    font-size: 1rem; 
+  }
+}
+
+@media (min-width: 1280px) {
+  .title-2-xl {
+    font-size: 8rem;
+  }
+  
 }

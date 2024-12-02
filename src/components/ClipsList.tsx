@@ -12,10 +12,16 @@ export default function ClipsList ({ data }: ImagesListListProps) {
     data.map(image => (
       <li className={styles['li-image']} >
         <Link to={`https://image.tmdb.org/t/p/original${image.file_path}`} target="_blank">
-          <img 
-            className={`${styles['image-poster']} element-selector`} 
-            src={`https://image.tmdb.org/t/p/w500${image.file_path}`}
-          />
+          <picture>
+            <source
+              srcSet={`https://image.tmdb.org/t/p/w780${image.file_path}`}
+              media="(min-width: 768px)"
+            />
+            <img 
+              className={`${styles['image-poster']} element-selector`} 
+              src={`https://image.tmdb.org/t/p/w300${image.file_path}`}
+            />
+          </picture>
         </Link>
       </li>
     ))

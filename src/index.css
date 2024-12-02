@@ -32,6 +32,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'DM Sans';
+  src: url('./assets/fonts/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-stretch: 100% 200%;
+  font-display: swap;
+}
+
 
 :root {
   font-family: 'Montserrat', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -39,7 +48,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.9);
   background-color: #242424;
 
   font-synthesis: none;
@@ -72,15 +81,15 @@ body {
 main {
   width: 100%;
   max-width: 1920px;
-  padding: 3.125rem 6.25rem;
+  padding: 1rem;
   margin: auto;
   display: grid;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 h1, h2, h3, h4 {
   text-wrap: balance;
-}
+} 
 
 p {
   text-wrap: pretty;
@@ -99,19 +108,16 @@ button {
   background-color: transparent;
 }
 
-@media screen and (max-width: 1024px) {
-  html {
-    font-size: 12px;
+@media screen and (min-width: 768px) {
+  main {
+    padding: 3rem;
+    gap: 3rem;
   }
 }
 
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 10px; 
-  }
-
+@media screen and (min-width: 1280px) {
   main {
-    padding: 2rem 1.5rem;
+    padding: 3.5rem 6rem;
     gap: 3rem;
   }
 }

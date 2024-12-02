@@ -33,8 +33,6 @@ export default function SliderHeader() {
     setLoaded 
   } = useSlider({ images, autoplay: true })
 
-  // if (isLoading) return <div>Loading...</div>;
-
   const { 
     title,
     overview,
@@ -43,9 +41,6 @@ export default function SliderHeader() {
     logos,
     id 
   } = areMoviesLoaded ? movies[selectedIndex] : {} as MovieSlider;
-
-  console.log(images)
-  console.log(logos)
 
   return (
     <article className={styles.slider}>
@@ -64,14 +59,22 @@ export default function SliderHeader() {
           <section className={styles['slider-content']}>
             <section className={styles['details-movie']}>
               <header className={styles['details-movie-header']}>
-                <picture>
-                  <img
-                    className={styles['logo-movie']}
-                    src={logos && logos.length > 0 ? logos[0].file_path : ''}
-                    alt={'Logo de la película: ' + title }
-                    onError={(e)=>{e.currentTarget.src=''}}
-                  />
-                </picture>
+                {
+                  (logos && logos.length > 0) && 
+                  <picture>
+                    <source
+                      media='(min-width: 768px)'
+                      srcSet={`https://image.tmdb.org/t/p/w500${logos[0].file_path}`}
+                      type="image/webp"
+                    />
+                    <img
+                      className={styles['logo-movie']}
+                      src={`https://image.tmdb.org/t/p/w200${logos[0].file_path}`}
+                      alt={'Logo de la película: ' + title }
+                      onError={(e)=>{e.currentTarget.src=''}}
+                    />
+                  </picture>
+                }
                 <section aria-label='metadata'>
                   <ul className={styles.metadata}>
                     <li className={`${styles.caption} caption`}>{ release_date.split('-')[0] }</li>
@@ -87,9 +90,11 @@ export default function SliderHeader() {
                 </section>
               </header>
 
-              <div className={styles['div-overview']}>
-                <p className={'overview'}><b>{title + ': '}</b>{overview}</p>
-              </div>
+              <section className={styles['overview-container']}>
+                <p className={'overview'}>
+                  <b>{title + ': '}</b>{overview}
+                </p>
+              </section>
 
               <section className={styles['buttons-container']}>
                 <Link className={`button ${styles['button-cta']} ${styles['watch']}`} to={`/movie/${id}`}>
@@ -115,17 +120,21 @@ export default function SliderHeader() {
                 }
             </section>
 
-            <ArrowRightIcon className={styles['arrow-icon1']}/>
-          </section>
-          
-          <nav className={styles['slider-navigation-buttons']}>
-            <button className={styles['button-slider-scroll']} onClick={previousImage}>
-              <ArrowLeftIcon className={styles['arrow-icon']}/>
+            <nav className={styles['slider-nav']}>
+              <button 
+                className={`${styles['button-slider-scroll']}`}
+                onClick={ nextImage }
+              >
+                <ArrowRightIcon className={styles['arrow-icon']}/>
               </button>
-            <button className={styles['button-slider-scroll']} onClick={nextImage}>
-              <ArrowRightIcon className={styles['arrow-icon']}/>
-            </button>
-          </nav>
+              <button 
+                className={`${styles['button-slider-scroll']} ${styles['button-left']}`}
+                onClick={previousImage}
+              >
+                <ArrowLeftIcon className={styles['arrow-icon']}/>
+              </button>
+            </nav>
+          </section>
         </>
       }
     </article>

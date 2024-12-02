@@ -1,25 +1,52 @@
 .li-image {
   flex-shrink: 0;
-  padding-left: 0.75rem;
+  padding-left: 0.5rem;
   box-sizing: content-box;
-  max-height: 15.625rem;
+  max-height: 15rem;
   aspect-ratio: 16/9;
   scroll-snap-align: start;
 }
 
 .li-image:first-child {
-  padding-left: 100px;
+  padding-left: 1rem;
   box-sizing: content-box;
 }
 
 .li-image:last-child {
-  padding-right: 100px;
+  padding-right: 1rem;
   box-sizing: content-box;
 }
 
 .image-poster {
-  height: 250px;
+  height: 9rem;
   aspect-ratio: 16/9;
   border-radius: 10px;
   margin-bottom: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .image-poster {
+    height: 15rem;
+  }
+  
+  .li-image:first-child {
+    padding-left: 3rem; 
+  }
+  
+  .li-image:last-child {
+    padding-right: 3rem;
+  }
+
+}
+
+@media screen and (min-width: 1280px) {
+  
+  .li-image:first-child {
+    padding-left: 6rem; 
+  }
+  
+  .li-image:last-child {
+    padding-right: 6rem;
+  }
+
 }

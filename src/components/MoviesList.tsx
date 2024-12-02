@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom"
 import { Movie } from "../intefraces/Inrefaces";
 
@@ -10,13 +9,6 @@ interface MoviesListProps {
 }
 
 export const MoviesList = ({ movies, isTrend = false }: MoviesListProps) => {
-  // if (!movies || movies.length === 0) {
-  //   return <p>No movies available.</p>; // Asegurarse de que los datos están disponibles
-  // } 
-  useEffect(()=>{
-
-  }, [])
- 
 
   return (
     movies?.map(movie => (
@@ -30,7 +22,7 @@ export const MoviesList = ({ movies, isTrend = false }: MoviesListProps) => {
           <img
             loading="lazy" 
             className={`element-selector ${styles['movie-poster']}`} 
-            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} 
+            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}  
             alt={'Poster of movie: ' + movie.title}
           />
         </picture>

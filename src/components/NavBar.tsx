@@ -6,7 +6,7 @@ import styles from './css/NavBar.module.css'
 
 export function NavBar() {
   return (
-    <nav className={styles['nav-bar-page']}>
+    <nav className={styles['nav-bar']}>
       <button className='menu'><MenuIcon className={styles['menu-icon']}/></button>
       <Link to='/'>
         <h1 className='title-1'>Watch<span className={styles.bold}>In</span></h1>

@@ -1,26 +1,26 @@
 .li-cast {
   position: relative;
   flex-shrink: 0;
-  width: 12.5rem;
-  min-height: 15.625rem;
-  padding-left: 0.75rem;
+  width: 9rem;
+  min-height: 15rem;
+  padding-left: 0.5rem;
   scroll-snap-align: start;
   box-sizing: content-box;
 }
 
 .li-cast:first-child {
-  padding-left: 100px;
+  padding-left: 1rem;
   box-sizing: content-box;
 }
 
 .li-cast:last-child {
-  padding-right: 100px;
+  padding-right: 1rem;
   box-sizing: content-box;
 }
 
 .member-image {
-  width: 200px;
-  height: 250px;
+  width: 9rem;
+  aspect-ratio: 4/5;
   object-fit : cover;
   border-radius: 10px;
 }
@@ -31,20 +31,33 @@
   padding: 8px 8px 0 8px;
 }
 
-@media screen and (max-width: 768px) {
-  .member-image {
-    width: 18rem;
+@media screen and (min-width: 768px) {
+  .li-cast {
+    width: 13rem;
   }
 
-  .li-cast {
-    max-width: 18rem;
+  .member-image {
+    width: 13rem;
   }
 
   .li-cast:first-child {
-    padding-left: 1.5rem;
+    padding-left: 3rem;
   }
   
   .li-cast:last-child {
-    padding-right: 1.5rem;
+    padding-right: 3rem;
+  }
+}
+
+
+@media screen and (min-width: 1280px) {
+
+
+  .li-cast:first-child {
+    padding-left: 6rem;
+  }
+  
+  .li-cast:last-child {
+    padding-right: 6rem;
   }
 }
